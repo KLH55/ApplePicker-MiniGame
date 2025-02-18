@@ -7,7 +7,7 @@ public class Basket : MonoBehaviour
 	// The following shows this  note in the inspector
     [Header("Set Dynamically")]
     public Text scoreGT;
-	private int score = 0;
+	private static int score = 0;
 
     // Use this for initialization
     void Start()
@@ -18,6 +18,7 @@ public class Basket : MonoBehaviour
         scoreGT = scoreGO.GetComponent<Text>();
 		// update the score
         scoreGT.text = ""+score;
+        score = 0;
 
     }
 
@@ -35,7 +36,11 @@ public class Basket : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-		// Add code here
+        // Add code here
+        if (coll.gameObject.CompareTag("Apple"))
+            score += 100;
+            scoreGT.text = "" + score;
+            Destroy(coll.gameObject);
 		// Need to add 100 points to the score and display the score
         
 		// if the player's current score is higher than the high score, the high score gets updated

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class AppleTree : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class AppleTree : MonoBehaviour
     void Update()
     {
         // Add a line of code here
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
 		// Hint: you'll need to get the tree's position vector and update it
 		
 

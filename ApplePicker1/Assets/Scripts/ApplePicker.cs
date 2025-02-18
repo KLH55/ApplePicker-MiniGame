@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ApplePicker : MonoBehaviour {
 
@@ -28,7 +29,8 @@ public class ApplePicker : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		//nothing is needed here
 	}
 
@@ -49,7 +51,7 @@ public class ApplePicker : MonoBehaviour {
 
         if (basketList.Count == 0)
         {
-            // Code missing here
+            SceneManager.LoadScene(0);
         }
 
     }
